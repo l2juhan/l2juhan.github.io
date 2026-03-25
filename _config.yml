@@ -1,5 +1,5 @@
 # Site Settings
-theme                    : minimal-mistakes-jekyll
+remote_theme             : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "dark"
 
 title                    : "주한의 기술 블로그"
@@ -28,7 +28,6 @@ encoding: "utf-8"
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
 
 # Plugins
 plugins:
@@ -37,6 +36,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
 
 # Pagination
 paginate: 5
