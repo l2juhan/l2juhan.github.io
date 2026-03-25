@@ -1,0 +1,74 @@
+# Site Settings
+theme                    : minimal-mistakes-jekyll
+minimal_mistakes_skin    : "dark"
+
+title                    : "주한의 기술 블로그"
+subtitle                 : "CS / Cloud / Frontend"
+name                     : "이주한"
+description              : "컴퓨터공학, 클라우드, 프론트엔드 학습 기록"
+url                      : "https://l2juhan.github.io"
+baseurl                  : ""
+repository               : "l2juhan/l2juhan.github.io"
+
+# Site Author
+author:
+  name     : "이주한"
+  bio      : "인하대 컴공 / Cloud & Frontend"
+  location : "Incheon, Korea"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/l2juhan"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/cse_juhan02"
+
+# Reading Files
+encoding: "utf-8"
+
+# Build settings
+markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Pagination
+paginate: 5
+paginate_path: /page:num/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
