@@ -24,6 +24,8 @@ author:
       url: "https://instagram.com/cse_juhan02"
 
 # Reading Files
+include:
+  - _pages
 encoding: "utf-8"
 
 # Build settings
