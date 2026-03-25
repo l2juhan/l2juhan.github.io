@@ -123,6 +123,9 @@ permalink: /about/
 ### 학습 중
 - 알고리즘, 운영체제, 컴퓨터 네트워크, 데이터베이스, 컴퓨터 구조
 
+### 학습 완료
+- 객체지향프로그래밍, 자바응용프로그래밍, 자료구조, 논리회로, 이산구조, 오픈소스응용프로그래밍, 시스템프로그래밍, 인터넷프로그래밍, 컴퓨팅사고와 데이터분석 기초
+
 ### 연락처
 - **Email**: [leejuhan0527@gmail.com](mailto:leejuhan0527@gmail.com)
 - **GitHub**: [github.com/l2juhan](https://github.com/l2juhan)
