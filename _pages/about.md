@@ -47,7 +47,7 @@ permalink: /about/
   <tr>
     <td align="center"><b>Cloud</b></td>
     <td align="center">
-      <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white"/>
+      <img src="https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white"/>
       <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white"/>
     </td>
   </tr>
@@ -88,9 +88,11 @@ permalink: /about/
       <img src="https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white"/>
     </td>
     <td width="33%" valign="top">
-      <a href="https://github.com/Team-PayCheck"><b>💰 PayCheck</b></a><br/><br/>
-      <sub>React Native 기반 근로자/고용주 급여 관리 모바일 앱</sub><br/><br/>
+      <b>💰 PayCheck</b><br/><br/>
+      <sub>근로자/고용주 급여 관리 서비스</sub><br/>
+      <sub><a href="https://github.com/Team-PayCheck/PayCheck-frontend">🌐 Web</a> · <a href="https://github.com/Team-PayCheck/PayCheck-mobile">📱 App</a></sub><br/><br/>
       <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+      <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/>
       <img src="https://img.shields.io/badge/React_Native-61DAFB?style=flat-square&logo=react&logoColor=black"/>
     </td>
     <td width="33%" valign="top">
