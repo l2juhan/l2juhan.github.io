@@ -2,6 +2,7 @@
 title: "Expo 스플래시 스크린 설정 및 적용법"
 date: 2026-02-23
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, expo, splash-screen]
 toc: true
 toc_sticky: true

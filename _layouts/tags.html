@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="tags-content">
+  <h1>Tags</h1>
+  <div class="tag-cloud">
+    {% for tag in site.tags %}
+    <a href="#{{ tag[0] }}" class="tag-item">#{{ tag[0] }} ({{ tag[1].size }})</a>
+    {% endfor %}
+  </div>
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
+  <div class="tag-section" id="{{ tag[0] }}">
+    <h2>#{{ tag[0] }}</h2>
+    <ul class="tag-posts">
+      {% for post in tag[1] %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>

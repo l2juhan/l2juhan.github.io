@@ -2,6 +2,7 @@
 title: "푸시 알림 권한 요청 (expo-notifications)"
 date: 2026-02-15
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, expo, push-notifications]
 toc: true
 toc_sticky: true

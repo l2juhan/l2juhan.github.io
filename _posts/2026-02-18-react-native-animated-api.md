@@ -2,6 +2,7 @@
 title: "Animated API — 모달 & 피커 애니메이션 (웹 CSS 비교)"
 date: 2026-02-18
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, animation, animated-api, web-comparison]
 toc: true
 toc_sticky: true

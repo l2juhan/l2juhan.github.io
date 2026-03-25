@@ -2,6 +2,7 @@
 title: "이미지 선택 + 압축 + Base64 변환 (expo-image-picker)"
 date: 2026-02-15
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, expo, image-picker, image-manipulation]
 toc: true
 toc_sticky: true

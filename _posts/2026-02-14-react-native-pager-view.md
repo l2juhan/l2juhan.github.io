@@ -2,6 +2,7 @@
 title: "PagerView — 스와이프 페이지 컨테이너"
 date: 2026-02-14
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, pager-view, swipe, ui]
 toc: true
 toc_sticky: true

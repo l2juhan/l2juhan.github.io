@@ -2,6 +2,7 @@
 title: "Expo 폰트 설정 (useFonts) 및 공통 Text 컴포넌트"
 date: 2026-02-24
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, expo, fonts, typescript]
 toc: true
 toc_sticky: true

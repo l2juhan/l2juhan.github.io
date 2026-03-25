@@ -2,6 +2,7 @@
 title: "React Native Modal 패턴 (웹 Portal 비교)"
 date: 2026-02-18
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, modal, bottom-sheet, web-comparison]
 toc: true
 toc_sticky: true

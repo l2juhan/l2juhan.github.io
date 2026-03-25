@@ -2,6 +2,7 @@
 title: "React Native UI 핵심 패턴 (웹 React 비교)"
 date: 2026-02-16
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, ui, styling, web-comparison]
 toc: true
 toc_sticky: true

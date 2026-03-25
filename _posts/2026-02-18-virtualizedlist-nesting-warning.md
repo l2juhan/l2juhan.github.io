@@ -2,6 +2,7 @@
 title: "VirtualizedList 중첩 경고 및 해결 패턴"
 date: 2026-02-18
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, flatlist, scrollview, performance]
 toc: true
 toc_sticky: true

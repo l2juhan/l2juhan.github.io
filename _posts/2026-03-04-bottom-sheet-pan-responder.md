@@ -2,6 +2,7 @@
 title: "BottomSheetModal — PanResponder 스와이프 닫기 구현"
 date: 2026-03-04
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, pan-responder, gesture, bottom-sheet]
 toc: true
 toc_sticky: true

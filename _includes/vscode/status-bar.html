@@ -1,0 +1,38 @@
+<footer class="status-bar" role="contentinfo">
+  <div class="status-bar-left">
+    <a class="status-item status-remote" href="#" title="Remote">
+      <i class="codicon codicon-remote"></i>
+    </a>
+    <a class="status-item status-branch" href="#">
+      <i class="codicon codicon-git-branch"></i>
+      <span>main</span>
+    </a>
+    <a class="status-item" href="#">
+      <i class="codicon codicon-error"></i>
+      <span>0</span>
+    </a>
+    <a class="status-item" href="#">
+      <i class="codicon codicon-warning"></i>
+      <span>0</span>
+    </a>
+  </div>
+  <div class="status-bar-right">
+    {% if page.layout == 'post' %}
+    <a class="status-item" href="#">{{ page.date | date: "%Y-%m-%d" }}</a>
+    {% if page.categories.size > 0 %}
+    <a class="status-item" href="#">{{ page.categories | first }}</a>
+    {% endif %}
+    {% endif %}
+    <a class="status-item" href="#">Ln 1, Col 1</a>
+    <a class="status-item" href="#">Spaces: 2</a>
+    <a class="status-item" href="#">UTF-8</a>
+    <a class="status-item" href="#">LF</a>
+    <a class="status-item" href="#">Markdown</a>
+    <a class="status-item" href="#">
+      <i class="codicon codicon-feedback"></i>
+    </a>
+    <a class="status-item status-bell" href="#">
+      <i class="codicon codicon-bell"></i>
+    </a>
+  </div>
+</footer>

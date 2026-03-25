@@ -1,0 +1,14 @@
+<div class="breadcrumb-bar" aria-label="Breadcrumb">
+  <span class="breadcrumb-item">{{ site.title }}</span>
+  {% if page.layout == 'post' and page.categories.size > 0 %}
+  <i class="codicon codicon-chevron-right breadcrumb-separator"></i>
+  <span class="breadcrumb-item">{{ page.categories | first }}</span>
+  {% endif %}
+  {% if page.title %}
+  <i class="codicon codicon-chevron-right breadcrumb-separator"></i>
+  <span class="breadcrumb-item breadcrumb-active">{% if page.layout == 'home' %}README.md{% else %}{{ page.title | truncate: 50 }}{% endif %}</span>
+  {% elsif page.url == "/" %}
+  <i class="codicon codicon-chevron-right breadcrumb-separator"></i>
+  <span class="breadcrumb-item breadcrumb-active">README.md</span>
+  {% endif %}
+</div>

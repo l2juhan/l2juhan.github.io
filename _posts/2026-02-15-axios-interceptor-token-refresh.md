@@ -2,6 +2,7 @@
 title: "Axios 인터셉터 + 토큰 자동 갱신"
 date: 2026-02-15
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, axios, jwt, authentication]
 toc: true
 toc_sticky: true

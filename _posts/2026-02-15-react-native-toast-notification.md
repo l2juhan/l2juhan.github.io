@@ -2,6 +2,7 @@
 title: "토스트 알림 구현 (react-native-alert-notification)"
 date: 2026-02-15
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, toast, alert, ui]
 toc: true
 toc_sticky: true

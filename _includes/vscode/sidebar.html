@@ -1,0 +1,88 @@
+<aside class="sidebar" id="sidebar" aria-label="File Explorer">
+  <div class="sidebar-header">
+    <span class="sidebar-title">EXPLORER</span>
+  </div>
+  <div class="sidebar-content">
+    <div class="file-tree">
+      <div class="tree-section open">
+        <div class="tree-section-header" role="button" tabindex="0">
+          <i class="codicon codicon-chevron-right tree-chevron"></i>
+          <span class="tree-label tree-label-root">{{ site.title }}</span>
+        </div>
+        <div class="tree-section-content">
+          {% assign sorted_cats = site.categories | sort %}
+          {% for cat in sorted_cats %}
+          {% assign cat_name = cat[0] %}
+          {% assign cat_posts = cat[1] | sort: "date" | reverse %}
+          <div class="tree-section{% if page.categories contains cat_name %} open{% endif %}">
+            <div class="tree-section-header" role="button" tabindex="0">
+              <i class="codicon codicon-chevron-right tree-chevron"></i>
+              <span class="tree-label">{{ cat_name }}</span>
+            </div>
+            <div class="tree-section-content">
+              {% assign has_subcats = false %}
+              {% for p in cat_posts %}
+                {% if p.subcategory %}
+                  {% assign has_subcats = true %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+
+              {% if has_subcats %}
+                {% assign subcats = "" %}
+                {% for p in cat_posts %}
+                  {% if p.subcategory %}
+                    {% unless subcats contains p.subcategory %}
+                      {% if subcats == "" %}
+                        {% assign subcats = p.subcategory %}
+                      {% else %}
+                        {% assign subcats = subcats | append: "," | append: p.subcategory %}
+                      {% endif %}
+                    {% endunless %}
+                  {% endif %}
+                {% endfor %}
+                {% assign subcat_list = subcats | split: "," %}
+
+                {% for sc in subcat_list %}
+                <div class="tree-section{% if page.subcategory == sc %} open{% endif %}">
+                  <div class="tree-section-header" role="button" tabindex="0">
+                    <i class="codicon codicon-chevron-right tree-chevron"></i>
+                    <span class="tree-label">{{ sc }}</span>
+                  </div>
+                  <div class="tree-section-content">
+                    {% for post in cat_posts %}
+                      {% if post.subcategory == sc %}
+                      <div class="tree-item{% if page.url == post.url %} active{% endif %}">
+                        <i class="codicon codicon-markdown tree-file-icon"></i>
+                        <a class="tree-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title | truncate: 35 }}</a>
+                      </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+                {% endfor %}
+
+                {% for post in cat_posts %}
+                  {% unless post.subcategory %}
+                  <div class="tree-item{% if page.url == post.url %} active{% endif %}">
+                    <i class="codicon codicon-markdown tree-file-icon"></i>
+                    <a class="tree-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title | truncate: 35 }}</a>
+                  </div>
+                  {% endunless %}
+                {% endfor %}
+              {% else %}
+                {% for post in cat_posts %}
+                <div class="tree-item{% if page.url == post.url %} active{% endif %}">
+                  <i class="codicon codicon-markdown tree-file-icon"></i>
+                  <a class="tree-link" href="{{ post.url }}" title="{{ post.title }}">{{ post.title | truncate: 35 }}</a>
+                </div>
+                {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

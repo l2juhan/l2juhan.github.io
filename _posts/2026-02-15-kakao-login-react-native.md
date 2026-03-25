@@ -2,6 +2,7 @@
 title: "카카오 로그인 연동 (@react-native-seoul/kakao-login)"
 date: 2026-02-15
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, kakao, oauth, authentication]
 toc: true
 toc_sticky: true

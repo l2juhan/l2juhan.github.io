@@ -2,6 +2,7 @@
 title: "WheelPicker — iOS 스타일 휠 피커 컴포넌트"
 date: 2026-02-18
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, wheel-picker, animated-api, custom-component]
 toc: true
 toc_sticky: true

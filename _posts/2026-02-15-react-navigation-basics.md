@@ -2,6 +2,7 @@
 title: "React Navigation 기초 — 화면 이동과 스택 관리"
 date: 2026-02-15
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, react-navigation, typescript]
 toc: true
 toc_sticky: true

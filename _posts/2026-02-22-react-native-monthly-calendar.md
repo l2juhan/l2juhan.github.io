@@ -2,6 +2,7 @@
 title: "월간캘린더 컴포넌트 구조 (MonthlyCalendar)"
 date: 2026-02-22
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, calendar, component-architecture, paycheck]
 toc: true
 toc_sticky: true

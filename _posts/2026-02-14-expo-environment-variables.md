@@ -2,6 +2,7 @@
 title: "Expo 환경 변수 설정 방법"
 date: 2026-02-14
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, expo, env]
 toc: true
 toc_sticky: true

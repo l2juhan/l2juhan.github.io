@@ -2,6 +2,7 @@
 title: "Zustand + AsyncStorage Persist — React Native 상태 관리"
 date: 2026-02-15
 categories: [Frontend]
+subcategory: ReactNative
 tags: [react-native, zustand, state-management, asyncstorage]
 toc: true
 toc_sticky: true

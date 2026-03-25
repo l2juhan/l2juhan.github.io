@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="categories-content">
+  <h1>Categories</h1>
+  {% assign sorted_categories = site.categories | sort %}
+  {% for category in sorted_categories %}
+  <div class="category-section" id="{{ category[0] }}">
+    <h2 class="category-header">
+      <svg class="folder-icon" viewBox="0 0 24 24" width="20" height="20" fill="#dcb67a"><path d="M10 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2h-8l-2-2z"/></svg>
+      {{ category[0] }} <span class="category-count">({{ category[1].size }})</span>
+    </h2>
+    <ul class="category-posts">
+      {% for post in category[1] %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>
