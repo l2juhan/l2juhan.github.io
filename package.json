@@ -1,0 +1,28 @@
+{
+  "name": "l2juhan.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "migrate": "node scripts/notion-to-jekyll.js",
+    "convert": "node scripts/convert-export.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l2juhan/l2juhan.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/l2juhan/l2juhan.github.io/issues"
+  },
+  "homepage": "https://github.com/l2juhan/l2juhan.github.io#readme",
+  "description": "",
+  "dependencies": {
+    "@notionhq/client": "^5.14.0",
+    "dotenv": "^17.3.1",
+    "fs-extra": "^11.3.4",
+    "notion-to-md": "^3.1.9",
+    "slugify": "^1.6.8"
+  }
+}

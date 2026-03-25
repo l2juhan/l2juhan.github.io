@@ -1,0 +1,6 @@
+node_modules/
+.env
+_notion_export/
+_site/
+.jekyll-cache/
+.sass-cache/

@@ -1,0 +1,193 @@
+---
+title: "React Navigation 기초 — 화면 이동과 스택 관리"
+date: 2026-02-15
+categories: [Frontend]
+tags: [react-native, react-navigation, typescript]
+toc: true
+toc_sticky: true
+---
+
+React Navigation은 React Native에서 화면 이동을 처리하는 표준 라이브러리입니다. 웹의 React Router와 비슷한 역할을 합니다.
+
+## 설치
+
+```bash
+# 코어 패키지
+npm install @react-navigation/native
+
+# Stack Navigator
+npm install @react-navigation/native-stack
+
+# Expo 필수 의존성
+npx expo install react-native-screens react-native-safe-area-context
+```
+
+## 기본 설정
+
+### NavigationContainer 감싸기
+
+앱의 최상위에서 `NavigationContainer`로 감싸야 합니다.
+
+```typescript
+// App.tsx
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "./src/navigation/RootNavigator";
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
+  );
+}
+```
+
+### Stack Navigator 생성
+
+```typescript
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+// 타입 정의
+export type RootStackParamList = {
+  Home: undefined;
+  Detail: { itemId: number };
+  Profile: { userId: string } | undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+const RootNavigator = () => {
+  return (
+    <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Detail" component={DetailScreen} />
+    </Stack.Navigator>
+  );
+};
+```
+
+## 네비게이션 메서드
+
+### navigate() — 화면 이동
+
+```typescript
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, "Home">;
+
+const HomeScreen = () => {
+  const navigation = useNavigation<NavigationProp>();
+
+  const goToDetail = () => {
+    navigation.navigate("Detail", { itemId: 123 });
+  };
+
+  return <Button title="상세 보기" onPress={goToDetail} />;
+};
+```
+
+### goBack() — 뒤로가기
+
+```typescript
+<Button title="뒤로" onPress={() => navigation.goBack()} />
+```
+
+### CommonActions.reset() — 스택 초기화
+
+뒤로가기를 방지하고 싶을 때 사용합니다. (로그인 완료 후 등)
+
+```typescript
+import { CommonActions } from "@react-navigation/native";
+
+navigation.dispatch(
+  CommonActions.reset({
+    index: 0,
+    routes: [{ name: "Home" }],
+  })
+);
+```
+
+### navigate vs reset 비교
+
+| 메서드 | 동작 | 뒤로가기 | 사용 예시 |
+|---|---|---|---|
+| `navigate()` | 스택에 화면 추가 | 가능 | 일반적인 화면 이동 |
+| `reset()` | 스택 완전 초기화 | 불가능 | 로그인/회원가입 완료 후 |
+
+## 파라미터 받기 — useRoute
+
+```typescript
+import { useRoute } from "@react-navigation/native";
+import type { RouteProp } from "@react-navigation/native";
+
+type DetailRouteProp = RouteProp<RootStackParamList, "Detail">;
+
+const DetailScreen = () => {
+  const route = useRoute<DetailRouteProp>();
+  const { itemId } = route.params;
+
+  return <Text>아이템 ID: {itemId}</Text>;
+};
+```
+
+## 조건부 초기 화면 결정
+
+로그인 상태에 따라 다른 화면을 보여주는 패턴입니다.
+
+```typescript
+import { useAuthStore } from "../stores/authStore";
+
+const RootNavigator = () => {
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+  const userType = useAuthStore((state) => state.userInfo?.userType);
+
+  const getInitialRoute = () => {
+    if (!isLoggedIn) return "Welcome";
+    if (userType === "WORKER") return "WorkerHome";
+    return "EmployerHome";
+  };
+
+  return (
+    <Stack.Navigator initialRouteName={getInitialRoute()}>
+      <Stack.Screen name="Welcome" component={WelcomeScreen} />
+      <Stack.Screen name="WorkerHome" component={WorkerHomeScreen} />
+      <Stack.Screen name="EmployerHome" component={EmployerHomeScreen} />
+    </Stack.Navigator>
+  );
+};
+```
+
+## 중첩 Navigator
+
+회원가입처럼 여러 단계로 나뉘어진 플로우를 별도 Navigator로 분리할 수 있습니다.
+
+```typescript
+export type SignUpStackParamList = {
+  Step1UserType: undefined;
+  Step2Profile: undefined;
+  Step3BasicInfo: undefined;
+  Step4Alarm: undefined;
+  Step5Complete: undefined;
+};
+
+const Stack = createNativeStackNavigator<SignUpStackParamList>();
+
+const SignUpNavigator = () => (
+  <Stack.Navigator initialRouteName="Step1UserType" screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="Step1UserType" component={Step1Screen} />
+    <Stack.Screen name="Step2Profile" component={Step2Screen} />
+    {/* ... */}
+  </Stack.Navigator>
+);
+```
+
+## React Router (웹) vs React Navigation (모바일)
+
+| 항목 | React Router (웹) | React Navigation (RN) |
+|---|---|---|
+| 라우팅 | URL 기반 | 스택 기반 |
+| 이동 | `<Link>`, `navigate()` | `navigation.navigate()` |
+| 뒤로가기 | 브라우저 뒤로가기 | `navigation.goBack()` |
+| 파라미터 | URL params, state | route.params |
+| 스택 초기화 | `replace()` | `CommonActions.reset()` |
