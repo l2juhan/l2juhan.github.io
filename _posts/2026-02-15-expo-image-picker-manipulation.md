@@ -6,6 +6,7 @@ tags: [react-native, expo, image-picker, image-manipulation]
 toc: true
 toc_sticky: true
 ---
+{% raw %}
 
 사용자 갤러리에서 이미지를 선택하고, 서버 전송을 위해 리사이즈/압축/Base64 변환하는 방법을 정리합니다.
 
@@ -125,3 +126,5 @@ iOS에서는 갤러리 접근 권한이 필요합니다. Expo에서는 `app.json
   }
 }
 ```
+
+{% endraw %}

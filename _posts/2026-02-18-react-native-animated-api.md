@@ -6,6 +6,7 @@ tags: [react-native, animation, animated-api, web-comparison]
 toc: true
 toc_sticky: true
 ---
+{% raw %}
 
 React Native에서 애니메이션을 구현하는 핵심 API인 `Animated`를 정리합니다. BottomSheetModal과 WheelPicker 구현 과정에서 사용한 실제 코드 예시를 포함합니다.
 
@@ -106,3 +107,5 @@ const translateY = slideAnim.interpolate({
 | | `backgroundColor`, `borderRadius` |
 
 > 레이아웃 속성 애니메이션이 필요하면 `useNativeDriver: false` 또는 `react-native-reanimated`를 사용하세요.
+
+{% endraw %}

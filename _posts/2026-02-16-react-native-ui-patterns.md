@@ -6,6 +6,7 @@ tags: [react-native, ui, styling, web-comparison]
 toc: true
 toc_sticky: true
 ---
+{% raw %}
 
 React 웹 경험이 있는 개발자가 React Native에서 UI를 구현할 때 알아야 할 핵심 차이점을 정리합니다.
 
@@ -126,3 +127,5 @@ const Screen = () => (
 | 이미지 | `<img src>` | `<Image source>` |
 | 아이콘 | `react-icons` | `@expo/vector-icons` |
 | 노치 대응 | 해당 없음 | `SafeAreaView` |
+
+{% endraw %}

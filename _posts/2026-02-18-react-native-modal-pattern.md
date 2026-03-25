@@ -6,6 +6,7 @@ tags: [react-native, modal, bottom-sheet, web-comparison]
 toc: true
 toc_sticky: true
 ---
+{% raw %}
 
 React Native의 `<Modal>` 컴포넌트와 웹의 Portal 패턴을 비교하고, BottomSheet 모달 구현 패턴을 정리합니다.
 
@@ -95,3 +96,5 @@ Animated.timing(slideAnim, { toValue: 0, duration: 200 })
 ```
 
 이걸 안 하면 애니메이션이 끝나기 전에 모달이 사라져서 뚝 끊기는 느낌이 납니다.
+
+{% endraw %}

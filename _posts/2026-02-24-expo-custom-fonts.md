@@ -6,6 +6,7 @@ tags: [react-native, expo, fonts, typescript]
 toc: true
 toc_sticky: true
 ---
+{% raw %}
 
 Expo 앱에서 커스텀 폰트를 로드하고, 공통 Text 컴포넌트로 전역 적용하는 방법을 정리합니다.
 
@@ -92,3 +93,5 @@ import { Text } from "../components/common/Text";
 | 폰트 변경 | 모든 파일 수정 | 한 곳만 수정 |
 | 코드 가독성 | 길고 반복적 | 간결하고 직관적 |
 | 유지보수 | 어려움 | 쉬움 |
+
+{% endraw %}

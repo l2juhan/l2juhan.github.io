@@ -6,6 +6,7 @@ tags: [react-native, pager-view, swipe, ui]
 toc: true
 toc_sticky: true
 ---
+{% raw %}
 
 `react-native-pager-view`는 좌우 스와이프로 페이지를 전환하는 네이티브 컴포넌트입니다. 온보딩, 이미지 갤러리, 탭 뷰 등에 활용됩니다.
 
@@ -104,3 +105,5 @@ const OnboardingStack = () => {
 | 성능 | 최적화됨 | 많은 페이지 시 느림 |
 | 네이티브 | 네이티브 구현 | JS 기반 |
 | 용도 | 온보딩, 갤러리 | 긴 콘텐츠 스크롤 |
+
+{% endraw %}

@@ -6,6 +6,7 @@ tags: [react-native, react-navigation, typescript]
 toc: true
 toc_sticky: true
 ---
+{% raw %}
 
 React Navigation은 React Native에서 화면 이동을 처리하는 표준 라이브러리입니다. 웹의 React Router와 비슷한 역할을 합니다.
 
@@ -191,3 +192,5 @@ const SignUpNavigator = () => (
 | 뒤로가기 | 브라우저 뒤로가기 | `navigation.goBack()` |
 | 파라미터 | URL params, state | route.params |
 | 스택 초기화 | `replace()` | `CommonActions.reset()` |
+
+{% endraw %}
