@@ -2,7 +2,7 @@
 remote_theme             : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "dark"
 
-title                    : "주한의 기술 블로그"
+title                    : "잉주한의 IT 일기"
 subtitle                 : "CS / Cloud / Frontend"
 name                     : "이주한"
 description              : "컴퓨터공학, 클라우드, 프론트엔드 학습 기록"
