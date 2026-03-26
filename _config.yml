@@ -23,6 +23,13 @@ author:
 # Reading Files
 include:
   - _pages
+exclude:
+  - PLAN.md
+  - scripts/
+  - node_modules/
+  - .env
+  - package.json
+  - package-lock.json
 encoding: "utf-8"
 
 # Build settings

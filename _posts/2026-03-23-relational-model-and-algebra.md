@@ -15,6 +15,8 @@ toc_sticky: true
 - **튜플(Tuple)** = 행(Row) — 값들 사이의 관계를 나타냄
 - **속성(Attribute)** = 열(Column)
 
+![instructor 릴레이션 예시](/assets/images/posts/relational-model-and-algebra/relational-model-1.png)
+
 ## 릴레이션의 형식적 정의
 
 - 각 속성에는 **도메인(Domain)**이 존재 — 허용되는 값들의 집합
@@ -40,6 +42,10 @@ toc_sticky: true
 - **기본키(Primary Key)**: 후보키 중 하나를 선택한 것, null 불가
 - **외래키(Foreign Key)**: 한 릴레이션의 값이 다른 릴레이션에 반드시 존재해야 하는 제약
 
+## University DB 스키마 다이어그램
+
+![University DB 스키마 다이어그램](/assets/images/posts/relational-model-and-algebra/relational-model-2.png)
+
 ## 관계 대수 — 6가지 기본 연산
 
 ### Select (σ) — 행 필터링
@@ -51,6 +57,8 @@ toc_sticky: true
 SQL 대응: WHERE salary >= 85000
 ```
 
+![Select 연산 예시](/assets/images/posts/relational-model-and-algebra/relational-model-3.png)
+
 ### Project (Π) — 열 필터링
 
 지정한 속성만 추출하고 중복을 제거합니다.
@@ -59,6 +67,8 @@ SQL 대응: WHERE salary >= 85000
 Π_{ID, salary}(instructor)
 SQL 대응: SELECT DISTINCT ID, salary
 ```
+
+![Project 연산 예시](/assets/images/posts/relational-model-and-algebra/relational-model-4.png)
 
 ### 연산 조합 (Composition)
 
@@ -71,9 +81,13 @@ SQL 대응: SELECT DISTINCT ID, salary
 
 > Selectivity 높음(많이 통과) → PROJECT 먼저, Selectivity 낮음(적게 통과) → SELECT 먼저
 
+![연산 조합 예시](/assets/images/posts/relational-model-and-algebra/relational-model-5.png)
+
 ### Cartesian Product (×) — 카티션 곱
 
 r의 모든 튜플과 s의 모든 튜플을 모든 조합으로 결합합니다. 단독으로는 의미 없는 조합이 많아 보통 σ와 함께 사용합니다.
+
+![Cartesian Product 예시](/assets/images/posts/relational-model-and-algebra/relational-model-6.png)
 
 ### Natural Join (⋈) — 자연 조인
 
@@ -86,13 +100,19 @@ R ⋈ S = Π_{A,B,C,D,E}(σ_{R.B = S.B}(R × S))
 
 교환법칙(commutative), 결합법칙(associative)이 성립합니다.
 
+![Natural Join 예시](/assets/images/posts/relational-model-and-algebra/relational-model-7.png)
+
 ### Union (∪) — 합집합
 
 두 릴레이션의 모든 튜플을 합칩니다(중복 제거). 속성 수(arity)와 도메인이 같아야 합니다(union compatible).
 
+![Union 예시](/assets/images/posts/relational-model-and-algebra/relational-model-8.png)
+
 ### Set Difference (–) — 차집합
 
 r에는 있지만 s에는 없는 튜플을 구합니다.
+
+![Set Difference 예시](/assets/images/posts/relational-model-and-algebra/relational-model-9.png)
 
 ### Rename (ρ) — 이름 변경
 
@@ -102,3 +122,5 @@ r에는 있지만 s에는 없는 튜플을 구합니다.
 예: ID 12121보다 연봉이 높은 교수 찾기
 → instructor를 i, j로 rename해서 자기 자신과 비교
 ```
+
+![Rename 연산 수식](/assets/images/posts/relational-model-and-algebra/relational-model-10.png)

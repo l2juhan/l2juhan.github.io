@@ -19,6 +19,8 @@ toc_sticky: true
 
 작고 빠르고 비싼 메모리를 크고 느리고 싼 메모리로 보완하는 구조입니다.
 
+![메모리 계층 구조 피라미드](/assets/images/posts/memory-hierarchy-and-cache/memory-hierarchy-and-cache-1.png)
+
 ```
 Register → Cache(SRAM) → Main Memory(DRAM) → Disk
 ```
@@ -53,6 +55,8 @@ T = H × T1 + (1-H) × (T1 + T2)
 
 블록 단위 전송은 공간적 지역성을 활용하여 인접 데이터도 함께 캐싱합니다.
 
+![CPU - Cache - Main Memory 구조](/assets/images/posts/memory-hierarchy-and-cache/memory-hierarchy-and-cache-2.png)
+
 ## 캐시 구조
 
 주소 구조: `[Tag | Set index | Block offset]`
@@ -61,11 +65,17 @@ T = H × T1 + (1-H) × (T1 + T2)
 - **Set index**: 어떤 세트에 매핑되는지
 - **Block offset**: 블록 내에서 몇 번째 바이트인지
 
+![캐시 구조 — Tag, Set index, Block offset](/assets/images/posts/memory-hierarchy-and-cache/memory-hierarchy-and-cache-3.png)
+
 ## 캐시 매핑 (Cache Mapping)
 
 - **Direct Mapped**: 각 블록이 캐시의 한 곳에만 매핑. 간단하지만 충돌 미스 발생
 - **Set-Associative**: 세트 안에 E개 라인. 충돌 완화. LRU로 교체 대상 선택
 - 캐시 크기: `C = S(세트 수) × E(세트당 라인 수) × B(블록 크기)`
+
+![Direct Mapped 캐시 예시](/assets/images/posts/memory-hierarchy-and-cache/memory-hierarchy-and-cache-4.png)
+
+![2-way Set-Associative 캐시 예시](/assets/images/posts/memory-hierarchy-and-cache/memory-hierarchy-and-cache-5.png)
 
 ## 쓰기 정책
 
@@ -74,11 +84,15 @@ T = H × T1 + (1-H) × (T1 + T2)
 | Write-through | 캐시 수정 시 메모리에도 바로 write | 메모리 항상 최신, 느림 |
 | Write-back | 캐시만 수정, 교체 시 메모리에 write | dirty bit 필요, 빠름 |
 
+![Cache Read Operation 플로우차트](/assets/images/posts/memory-hierarchy-and-cache/memory-hierarchy-and-cache-6.png)
+
 ## 캐시 일관성 문제 (Cache Coherence)
 
 멀티프로세서에서 여러 CPU가 같은 주소를 캐싱했을 때, 한 CPU가 수정하면 다른 CPU 캐시와 불일치가 발생합니다.
 
 **스누핑 프로토콜(Snooping Protocol)**: 각 CPU의 캐시 컨트롤러가 공유 버스를 감시하여 **무효화(Invalidate)**합니다.
+
+![캐시 일관성 문제 — 멀티프로세서 환경](/assets/images/posts/memory-hierarchy-and-cache/memory-hierarchy-and-cache-7.png)
 
 ## 거짓 공유 (False Sharing)
 

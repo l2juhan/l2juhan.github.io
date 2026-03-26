@@ -305,6 +305,11 @@ body.vscode-body {
   color: var(--vsc-icon-folder);
 }
 
+/* Open folder icon swap */
+.tree-section.open > .tree-section-header > .tree-folder-icon::before {
+  content: "\ea83"; /* codicon-folder-opened */
+}
+
 .tree-label {
   font-size: var(--vsc-font-size-base);
   color: var(--vsc-fg-secondary);
@@ -328,12 +333,46 @@ body.vscode-body {
 }
 
 /* Nested tree items - indentation per VS Code's 8px per level */
-.tree-section .tree-section .tree-section-header {
+/* Level 2: category folders (Cloud, Frontend, ...) */
+.tree-section .tree-section > .tree-section-header {
   padding-left: 16px;
 }
 
-.tree-section .tree-section .tree-item {
-  padding-left: 24px;
+.tree-section .tree-section > .tree-section-content > .tree-item {
+  padding-left: 36px;
+}
+
+/* Level 3: subcategory folders (AWS-CLF, ReactNative, ...) */
+.tree-section .tree-section .tree-section > .tree-section-header {
+  padding-left: 32px;
+}
+
+.tree-section .tree-section .tree-section > .tree-section-content > .tree-item {
+  padding-left: 52px;
+}
+
+/* Indent guide lines for nested folders */
+.tree-section .tree-section > .tree-section-content {
+  position: relative;
+}
+
+.tree-section .tree-section > .tree-section-content::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--vsc-indent-guide);
+}
+
+.tree-section .tree-section .tree-section > .tree-section-content::before {
+  left: 36px;
+}
+
+/* Active indent guide */
+.tree-section.open > .tree-section-content::before {
+  background: var(--vsc-indent-guide-active);
 }
 
 .tree-item {

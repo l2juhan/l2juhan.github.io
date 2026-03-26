@@ -17,6 +17,7 @@
           <div class="tree-section{% if page.categories contains cat_name %} open{% endif %}">
             <div class="tree-section-header" role="button" tabindex="0">
               <i class="codicon codicon-chevron-right tree-chevron"></i>
+              <i class="codicon codicon-folder tree-folder-icon"></i>
               <span class="tree-label">{{ cat_name }}</span>
             </div>
             <div class="tree-section-content">
@@ -47,6 +48,7 @@
                 <div class="tree-section{% if page.subcategory == sc %} open{% endif %}">
                   <div class="tree-section-header" role="button" tabindex="0">
                     <i class="codicon codicon-chevron-right tree-chevron"></i>
+                    <i class="codicon codicon-folder tree-folder-icon"></i>
                     <span class="tree-label">{{ sc }}</span>
                   </div>
                   <div class="tree-section-content">
