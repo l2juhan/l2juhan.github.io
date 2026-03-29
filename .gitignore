@@ -4,3 +4,16 @@ _notion_export/
 _site/
 .jekyll-cache/
 .sass-cache/
+
+# macOS
+.DS_Store
+
+# Tools
+.playwright-mcp/
+.claude/settings.local.json
+
+# Dev reference (screenshots, docs, scripts)
+/*.png
+PLAN.md
+VSCODE_UI_REFERENCE.md
+scripts/
