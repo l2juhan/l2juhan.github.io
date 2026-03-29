@@ -730,10 +730,9 @@ body.vscode-body {
 }
 
 /* --- Rouge/Highlight Syntax Highlighting --- */
+/* Token colors are in /assets/css/syntax.css (github.dark theme) */
 
 .highlight {
-  background: #1E1E1E;
-  color: #D4D4D4;
   border-radius: 6px;
   border: 1px solid #333;
   margin-bottom: 16px;
@@ -768,134 +767,6 @@ body.vscode-body {
 .content-body .highlight pre {
   margin-bottom: 0;
   border: none;
-}
-
-/* Comments */
-.highlight .c,
-.highlight .cm,
-.highlight .c1,
-.highlight .cs,
-.highlight .ch,
-.highlight .cp {
-  color: #6A9955;
-  font-style: italic;
-}
-
-/* Keywords */
-.highlight .k,
-.highlight .kd,
-.highlight .kn,
-.highlight .kp,
-.highlight .kr,
-.highlight .kc,
-.highlight .kt {
-  color: #569CD6;
-}
-
-/* Control keywords */
-.highlight .kc {
-  color: #569CD6;
-}
-
-/* Strings */
-.highlight .s,
-.highlight .sb,
-.highlight .sc,
-.highlight .sd,
-.highlight .s2,
-.highlight .se,
-.highlight .sh,
-.highlight .si,
-.highlight .sx,
-.highlight .sr,
-.highlight .s1,
-.highlight .ss,
-.highlight .dl {
-  color: #CE9178;
-}
-
-/* Numbers */
-.highlight .mi,
-.highlight .mf,
-.highlight .mh,
-.highlight .mo,
-.highlight .il,
-.highlight .mb,
-.highlight .mx {
-  color: #B5CEA8;
-}
-
-/* Functions */
-.highlight .nf,
-.highlight .fm,
-.highlight .nd {
-  color: #DCDCAA;
-}
-
-/* Types/Classes */
-.highlight .nc,
-.highlight .nb,
-.highlight .nn,
-.highlight .bp {
-  color: #4EC9B0;
-}
-
-/* Variables/Attributes */
-.highlight .na,
-.highlight .nv,
-.highlight .vi,
-.highlight .vg,
-.highlight .vc {
-  color: #9CDCFE;
-}
-
-/* Tags */
-.highlight .nt {
-  color: #569CD6;
-}
-
-/* Operators/Punctuation */
-.highlight .o,
-.highlight .ow,
-.highlight .p {
-  color: #D4D4D4;
-}
-
-/* Error */
-.highlight .err {
-  color: #F44747;
-  border: none;
-}
-
-/* Diff */
-.highlight .gd {
-  color: #F44747;
-  background: rgba(244, 71, 71, 0.1);
-}
-
-.highlight .gi {
-  color: #89D185;
-  background: rgba(137, 209, 133, 0.1);
-}
-
-/* Generic */
-.highlight .ge {
-  font-style: italic;
-}
-
-.highlight .gs {
-  font-weight: bold;
-}
-
-/* Line numbers */
-.highlight .gl,
-.highlight .ln,
-.highlight .lineno {
-  color: #858585;
-}
-
-.highlight .w {
-  color: #D4D4D4;
 }
 
 /* --- Tables --- */
