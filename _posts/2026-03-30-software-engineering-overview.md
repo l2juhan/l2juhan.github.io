@@ -3,7 +3,6 @@ layout: post
 title: "Software Engineering Overview — 소프트웨어 공학 및 개발론 개요"
 date: 2026-03-30
 categories: [Software-Engineering]
-subcategory: OpenSource
 tags: [software-engineering, sdlc, waterfall, v-model, spiral, agile, devops, ci-cd]
 description: "소프트웨어 공학의 목표와 원리, SDLC 종류(폭포수/V형/나선형/애자일), DevOps 개념과 핵심 원리"
 ---

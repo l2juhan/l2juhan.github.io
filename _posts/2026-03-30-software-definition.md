@@ -3,7 +3,6 @@ layout: post
 title: "Software Definition — 소프트웨어 정의 및 이해"
 date: 2026-03-30
 categories: [Software-Engineering]
-subcategory: OpenSource
 tags: [software, program, bug, defect, software-engineering]
 description: "소프트웨어의 정의, 프로그램과의 차이, 소프트웨어 결함 사례, 대규모 개발의 어려움과 공학의 필요성"
 ---
