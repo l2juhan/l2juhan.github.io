@@ -572,9 +572,24 @@ body.vscode-body {
 
 .editor-content {
   flex: 1;
+  overflow: hidden;
+  background: var(--vsc-editor-bg);
+  position: relative;
+}
+
+.tab-panel {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  background: var(--vsc-editor-bg);
+}
+
+.tab-panel.active {
+  display: block;
 }
 
 .editor-scroll {

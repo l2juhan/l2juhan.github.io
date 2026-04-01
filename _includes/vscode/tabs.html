@@ -1,14 +1,1 @@
-<div class="editor-tabs" role="tablist">
-  <a class="tab{% unless page.layout == 'home' %} inactive{% endunless %}{% if page.layout == 'home' %} active{% endif %}" href="/" role="tab" {% if page.layout == 'home' %}aria-selected="true"{% endif %}>
-    <i class="codicon codicon-markdown tab-icon"></i>
-    <span class="tab-title">README.md</span>
-    <span class="tab-close" title="Close tab"><i class="codicon codicon-close"></i></span>
-  </a>
-  {% unless page.layout == 'home' %}
-  <div class="tab active" role="tab" aria-selected="true">
-    <i class="codicon codicon-markdown tab-icon"></i>
-    <span class="tab-title">{% if page.layout == 'post' %}{{ page.title | truncate: 30 }}.md{% elsif page.layout == 'categories' %}categories.md{% elsif page.layout == 'tags' %}tags.md{% else %}{{ page.title | default: page.name }}.md{% endif %}</span>
-    <span class="tab-close" title="Close tab"><i class="codicon codicon-close"></i></span>
-  </div>
-  {% endunless %}
-</div>
+<div class="editor-tabs" id="editor-tabs" role="tablist"></div>

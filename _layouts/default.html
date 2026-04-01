@@ -4,16 +4,24 @@
   {% include vscode/head.html %}
 </head>
 <body class="vscode-body">
+  <script id="page-data" type="application/json">
+  {
+    "url": {{ page.url | default: "/" | jsonify }},
+    "tabTitle": {% if page.layout == 'home' %}"README.md"{% elsif page.layout == 'post' %}{{ page.title | truncate: 30 | append: ".md" | jsonify }}{% elsif page.layout == 'categories' %}"categories.md"{% elsif page.layout == 'tags' %}"tags.md"{% else %}{{ page.title | default: page.name | append: ".md" | jsonify }}{% endif %}
+  }
+  </script>
   <div class="vscode-app">
     {% include vscode/activity-bar.html %}
     {% include vscode/sidebar.html %}
     <div class="editor-group">
       {% include vscode/tabs.html %}
       {% include vscode/breadcrumb.html %}
-      <div class="editor-content">
-        <div class="editor-scroll">
-          <div class="content-body">
-            {{ content }}
+      <div class="editor-content" id="editor-content">
+        <div class="tab-panel active" data-tab-url="{{ page.url | default: '/' }}">
+          <div class="editor-scroll">
+            <div class="content-body">
+              {{ content }}
+            </div>
           </div>
         </div>
       </div>
