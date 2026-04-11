@@ -63,6 +63,13 @@ defaults:
     values:
       layout: page
 
+# Analytics (GoatCounter)
+# 사이트 코드는 https://www.goatcounter.com 가입 후 받은 서브도메인 prefix
+# 예: "l2juhan" → https://l2juhan.goatcounter.com
+# Settings → "Allow adding visitor counts on your website" 활성화 필요
+goatcounter:
+  code: "l2juhan"
+
 # Archives
 category_archive:
   type: liquid

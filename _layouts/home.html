@@ -11,6 +11,10 @@ layout: default
     <li>
       <span class="home-post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
       <a href="{{ post.url }}">{{ post.title }}</a>
+      <span class="post-views" data-view-path="{{ post.url }}">
+        <i class="codicon codicon-eye"></i>
+        <span class="views-count">–</span>
+      </span>
     </li>
     {% endfor %}
   </ul>

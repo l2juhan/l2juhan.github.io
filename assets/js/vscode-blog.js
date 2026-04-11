@@ -119,6 +119,10 @@
     }
     updateSidebarHighlight(tabs[activeIndex].url);
     renderTabBar();
+
+    if (window.ViewsCounter) {
+      window.ViewsCounter.track(tabs[activeIndex].url);
+    }
   }
 
   // ── Close tab ───────────────────────────────────────────────
@@ -201,6 +205,12 @@
     updateSidebarHighlight(url);
     renderTabBar();
     attachScrollListener(panel);
+
+    // Views counter (GoatCounter): refresh counts in new panel + track pageview
+    if (window.ViewsCounter) {
+      window.ViewsCounter.refresh(panel);
+      window.ViewsCounter.track(url);
+    }
   }
 
   // ── Link interception (SPA navigation) ──────────────────────

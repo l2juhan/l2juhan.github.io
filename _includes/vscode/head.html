@@ -22,3 +22,12 @@
     ]
   });"></script>
 {% feed_meta %}
+{% if site.goatcounter.code and site.goatcounter.code != "" %}
+<script>
+  window.GOATCOUNTER_CODE = {{ site.goatcounter.code | jsonify }};
+  window.goatcounter = { no_onload: true };
+</script>
+<script data-goatcounter="https://{{ site.goatcounter.code }}.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script defer src="/assets/js/views-counter.js?v={{ site.time | date: '%s' }}"></script>
+{% endif %}

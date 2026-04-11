@@ -7,6 +7,10 @@ layout: default
     <div class="post-meta">
       <time>{{ page.date | date: "%Y-%m-%d" }}</time>
       <span class="post-category">{{ page.categories | join: " / " }}</span>
+      <span class="post-views" data-view-path="{{ page.url }}">
+        <i class="codicon codicon-eye"></i>
+        <span class="views-count">–</span>
+      </span>
     </div>
     {% if page.tags.size > 0 %}
     <div class="post-tags">

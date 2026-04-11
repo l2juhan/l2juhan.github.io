@@ -923,6 +923,24 @@ body.vscode-body {
   color: var(--vsc-syn-control);
 }
 
+.post-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--vsc-fg-muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+}
+
+.post-views .codicon {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.post-views .views-count {
+  color: var(--vsc-syn-variable);
+}
+
 .post-tags {
   display: flex;
   flex-wrap: wrap;
@@ -950,6 +968,10 @@ body.vscode-body {
   font-size: 12px;
   margin-right: 12px;
   font-family: var(--vsc-font-code);
+}
+
+.home-content li .post-views {
+  margin-left: 8px;
 }
 
 /* Categories */
