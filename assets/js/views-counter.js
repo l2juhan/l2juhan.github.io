@@ -13,6 +13,7 @@
     var url = API_BASE + encodeURIComponent(path) + '.json';
     cache[path] = fetch(url)
       .then(function(r) {
+        if (r.status === 404) return { count: '0' };
         if (!r.ok) throw new Error(r.status);
         return r.json();
       })
