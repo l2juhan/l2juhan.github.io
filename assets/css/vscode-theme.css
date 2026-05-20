@@ -784,6 +784,85 @@ body.vscode-body {
   border: none;
 }
 
+/* --- Inline Demo Videos --- */
+
+.content-body figure.post-video {
+  margin: 16px 0 20px;
+  text-align: center;
+}
+
+.content-body figure.post-video video {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 360px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #000;
+}
+
+.content-body figure.post-video figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--vsc-syn-comment);
+  font-style: italic;
+}
+
+/* --- Collapsible Code (details/summary) --- */
+
+.content-body details.code-toggle {
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #1E1E1E;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.content-body details.code-toggle > summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-family: var(--vsc-font-code);
+  font-size: 12px;
+  color: var(--vsc-syn-comment);
+  background: #252526;
+}
+
+.content-body details.code-toggle > summary::-webkit-details-marker {
+  display: none;
+}
+
+.content-body details.code-toggle > summary::before {
+  content: "\25B6";
+  font-size: 9px;
+  color: #888;
+  transition: transform 0.15s ease;
+}
+
+.content-body details.code-toggle[open] > summary {
+  border-bottom: 1px solid #333;
+}
+
+.content-body details.code-toggle[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.content-body details.code-toggle > summary:hover {
+  color: #d4d4d4;
+}
+
+.content-body details.code-toggle .highlight,
+.content-body details.code-toggle .highlighter-rouge,
+.content-body details.code-toggle pre {
+  margin-bottom: 0;
+  border: none;
+  border-radius: 0;
+}
+
 /* --- Tables --- */
 
 .content-body table {
